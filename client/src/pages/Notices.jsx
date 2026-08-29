@@ -13,7 +13,10 @@ function Notices() {
 
   async function fetchNotices() {
     try {
-      const response = await fetch("http://localhost:5000/api/notices");
+      const response = await fetch(
+        "https://musharwa-village-1.onrender.com/api/notices"
+      );
+
       const data = await response.json();
 
       setNotices(data);
@@ -46,13 +49,16 @@ function Notices() {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/notices", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://musharwa-village-1.onrender.com/api/notices",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await response.json();
 

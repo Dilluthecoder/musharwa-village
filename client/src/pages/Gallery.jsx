@@ -10,7 +10,10 @@ function Gallery() {
 
   async function fetchGallery() {
     try {
-      const response = await fetch("http://localhost:5000/api/gallery");
+      const response = await fetch(
+        "https://musharwa-village-1.onrender.com/api/gallery"
+      );
+
       const data = await response.json();
 
       setGallery(data);
@@ -34,7 +37,7 @@ function Gallery() {
       return image;
     }
 
-    return `http://localhost:5000/${image}`;
+    return `https://musharwa-village-1.onrender.com/${image}`;
   }
 
   return (

@@ -43,7 +43,10 @@ function Admin() {
 
   async function fetchNotices() {
     try {
-      const response = await fetch("http://localhost:5000/api/notices");
+      const response = await fetch(
+        "https://musharwa-village-1.onrender.com/api/notices"
+      );
+
       const data = await response.json();
       setNotices(data);
     } catch (error) {
@@ -57,7 +60,10 @@ function Admin() {
 
   async function fetchFeedbacks() {
     try {
-      const response = await fetch("http://localhost:5000/api/feedback");
+      const response = await fetch(
+        "https://musharwa-village-1.onrender.com/api/feedback"
+      );
+
       const data = await response.json();
       setFeedbacks(data);
     } catch (error) {
@@ -71,7 +77,10 @@ function Admin() {
 
   async function fetchGallery() {
     try {
-      const response = await fetch("http://localhost:5000/api/gallery");
+      const response = await fetch(
+        "https://musharwa-village-1.onrender.com/api/gallery"
+      );
+
       const data = await response.json();
 
       if (Array.isArray(data)) {
@@ -114,13 +123,16 @@ function Admin() {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/notices", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(noticeForm),
-      });
+      const response = await fetch(
+        "https://musharwa-village-1.onrender.com/api/notices",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(noticeForm),
+        }
+      );
 
       const data = await response.json();
 
@@ -155,7 +167,7 @@ function Admin() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/notices/${id}`,
+        `https://musharwa-village-1.onrender.com/api/notices/${id}`,
         {
           method: "DELETE",
         }
@@ -184,7 +196,7 @@ function Admin() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/feedback/${id}`,
+        `https://musharwa-village-1.onrender.com/api/feedback/${id}`,
         {
           method: "DELETE",
         }
@@ -241,7 +253,7 @@ function Admin() {
       formData.append("image", selectedFile);
 
       const uploadResponse = await fetch(
-        "http://localhost:5000/api/gallery/upload",
+        "https://musharwa-village-1.onrender.com/api/gallery/upload",
         {
           method: "POST",
           body: formData,
@@ -257,7 +269,7 @@ function Admin() {
 
       // Save image information in MongoDB
       const galleryResponse = await fetch(
-        "http://localhost:5000/api/gallery",
+        "https://musharwa-village-1.onrender.com/api/gallery",
         {
           method: "POST",
           headers: {
@@ -314,7 +326,7 @@ function Admin() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/gallery/${id}`,
+        `https://musharwa-village-1.onrender.com/api/gallery/${id}`,
         {
           method: "DELETE",
         }
@@ -492,9 +504,7 @@ function Admin() {
       </section>
 
 
-      {/* =========================
-          ADD GALLERY PHOTO
-      ========================= */}
+      {/* ADD GALLERY PHOTO */}
 
       <section className="admin-section">
 
